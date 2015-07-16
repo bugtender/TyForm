@@ -1,0 +1,23 @@
+<fieldset class="form-group">
+	<%= f.label "Text_Area"%>
+	<div class="form-inline">
+			<div class="form-group">
+				<%= f.text_field :name, placeholder: "Name" ,class:"form-control"%>
+				<%= f.hidden_field :field_type ,:value =>"text_area" %>
+				<%= f.hidden_field :default_type ,:value =>"text_area" %>
+			</div>
+			<div class="form-group">
+				<%= f.check_box :required %> <%= f.label :required %>
+				
+				<%= f.hidden_field :_destroy%>
+				
+				<a href="#" class="remove_fields">
+					<button type="button" class="close remove_field" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</a>
+				
+			</div>
+	</div>
+</fieldset>
+

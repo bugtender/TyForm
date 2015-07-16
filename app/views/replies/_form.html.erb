@@ -1,0 +1,27 @@
+<%= form_for(@reply) do |f| %>
+  <% if @reply.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+
+      <ul>
+      <% @reply.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.hidden_field :form_id %>
+  
+  <div class="form_section">
+    <%= f.fields_for :properties, OpenStruct.new(@reply.properties) do |builder|%>
+      <% @reply.form.fields.each do |field| %>
+        <%= render "replies/fields/#{field.field_type}", field: field, f:builder%>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => 'btn btn-lg btn-success submit-form'%>
+  </div>
+<% end %>

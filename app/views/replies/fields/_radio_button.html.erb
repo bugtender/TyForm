@@ -1,0 +1,7 @@
+<div class="field form-group">
+	<%= f.label field.name %><br>
+	<% field.options.each do |option| %>
+		<%= f.radio_button(field.name,option.content) %>
+		<%= f.label option.content %>
+  <% end %>
+</div>

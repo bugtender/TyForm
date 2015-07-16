@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Replies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @replies.each do |reply| %>
+      <tr>
+        <td><%= link_to 'Show', reply %></td>
+        <td><%= link_to 'Edit', edit_reply_path(reply) %></td>
+        <td><%= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reply', new_reply_path %>
+
+<%=  form_tag new_reply_path, method: :get do %>
+  <%= select_tag :form_id, options_from_collection_for_select(Form.all, :id,:id) %>
+  <%= submit_tag "New Reply" , name:nil%>
+<%end%>

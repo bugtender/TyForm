@@ -1,0 +1,46 @@
+
+  <%= form_for(@form) do |f| %>
+    <% if @form.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@form.errors.count, "error") %> 
+          prohibited this form from being saved:
+        </h2>
+
+        <ul>
+        <% @form.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form_section">
+      <div class="field form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name ,class:"form-control"%>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :description %><br>
+        <%= f.text_field :description ,class:"form-control"%>
+      </div>
+
+      <%= f.fields_for :fields , @form.fields do |builder| %>
+        <%= render "forms/fields/field_#{builder.object.default_type}", f: builder %>
+      <% end %>
+    
+      <div id="form_dash">
+        <%= f.label "New Field" %>
+        <div>
+          <% ["text_field","text_area","radio_button","select"].each do |typef| %>
+            <%= link_to_add_form_fields typef, f, :fields%>
+          <% end %>
+        </div>
+      </div>
+    
+
+      <div class="actions">
+        <%= f.submit  :class => 'btn btn-lg btn-success submit-form'%>
+      </div>
+    </div>
+  <% end %>

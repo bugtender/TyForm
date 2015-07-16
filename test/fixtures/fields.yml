@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  default_type: MyString
+  field_type: MyString
+  required: false
+  form_id: 
+
+two:
+  name: MyString
+  default_type: MyString
+  field_type: MyString
+  required: false
+  form_id: 

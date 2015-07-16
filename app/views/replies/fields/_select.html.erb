@@ -1,0 +1,4 @@
+<div class="field form-group">
+	<%= f.label field.name %>
+	<%= f.select field.name,field.options.collect {|p| [ p.content ] }, {}, {class: "form-control"}%>
+</div>

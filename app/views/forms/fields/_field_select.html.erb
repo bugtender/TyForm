@@ -1,0 +1,24 @@
+<fieldset class="form-group">
+	<%= f.label "Select"%>
+	<div class="form-inline">
+			<div class="form-group">
+				<%= f.text_field :name, placeholder: "Name" ,class:"form-control"%>
+				<%= f.hidden_field :field_type ,:value =>"select" %>
+				<%= f.hidden_field :default_type ,:value =>"select" %>
+			</div>
+			<div class="form-group">
+				<%= f.check_box :required %> <%= f.label :required %>
+				
+				<%= f.hidden_field :_destroy%>
+				
+				<%= link_to "[remove]" , '#' , class: "remove_fields"%>
+			</div>
+	</div>
+	
+	<%= f.fields_for :options do |builder| %>
+		<%= render 'forms/fields/option_field' , f:builder %>
+	<% end %>
+	<div id="option-dash">
+		<%= link_to_add_option_fields "New Option", f, :options%>
+	</div>
+</fieldset>
