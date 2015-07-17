@@ -11,9 +11,9 @@
     </div>
     <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class=""><a href="/">Home</a></li>
+        <li class=""><a href="<%= root_path%>">Home</a></li>
 
-        <li class=""><a href="#">About</a></li>
+        <li class=""><a href="<%= pages_about_path%>">About</a></li>
         <% if user_signed_in? %>
           <li class=""><%= link_to "My Form", forms_path, :class => 'navbar-link' %> </li>
           <li class=""><%= link_to current_user.name, edit_user_registration_path, :class => 'navbar-link' %> </li>
