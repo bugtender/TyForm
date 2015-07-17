@@ -18,6 +18,6 @@ module ApplicationHelper
       render("forms/fields/" + association.to_s.singularize +  "_field", f: builder)
     end
 
-    link_to(name,'#',class: "add_option_fields btn btn-xs btn-primary", data:{id: id,fields: option_field.gsub("\n","")})
+    link_to(name,'#',class: "add_option_fields btn btn-xs btn-info", data:{id: id,fields: option_field.gsub("\n","")})
   end	
 end

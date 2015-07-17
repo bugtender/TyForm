@@ -1,3 +1,16 @@
+body{
+	background-color: #00777F;
+}
+
+.inner-section{
+	padding: 15px;
+	margin-top: 30px;
+	border-width: 5px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #00a0ab;
+	background-color: #fff;
+}
 
 .container {
 	margin-top: 60px;
@@ -8,10 +21,16 @@
 }
 
 .option-section {
-	margin-left: 20px;
+	width: 80%;
+	margin-left: 10%;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+
+.add_option_fields{
+	margin-left: 10%;
+}
+
 .back-section{
 	width: 100%;
 	margin-top: 10px;
@@ -23,5 +42,6 @@
 
 .submit-form{
 	width: 100%;
-	margin-top: 10px;
+	margin: 20px 0;
+
 }

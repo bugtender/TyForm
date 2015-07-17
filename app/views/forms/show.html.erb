@@ -1,9 +1,11 @@
+<div class="col-md-8 col-md-offset-2 inner-section">
 <p id="notice"><%= notice %></p>
 
 
 <h1>Reply List</h1>	
 <h2>Here is <%= link_to "Link" , new_reply_path(:form_id=>@form.id)%> for This Form</h2>
-<h3>or here is address => <%= link_to new_reply_url(:form_id=>@form.id)%></h3>
+<h4>or here is address => </h4>
+<h4><%=  new_reply_url(:form_id=>@form.id)%></h4>
 <% if @form.replies.first%>
 	<table class="table table-striped table-bordered table-condensed">
 	  <thead>
@@ -34,3 +36,4 @@
 
 <% link_to 'Edit', edit_form_path(@form) %>
 <%= link_to 'Back', forms_path ,class:"btn btn-default"%>
+</div>

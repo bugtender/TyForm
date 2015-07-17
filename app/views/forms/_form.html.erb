@@ -22,7 +22,7 @@
 
       <div class="field form-group">
         <%= f.label :description %><br>
-        <%= f.text_field :description ,class:"form-control"%>
+        <%= f.text_area :description ,class:"form-control"%>
       </div>
 
       <%= f.fields_for :fields , @form.fields do |builder| %>

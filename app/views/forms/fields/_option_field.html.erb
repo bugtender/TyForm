@@ -1,13 +1,13 @@
 <fieldset class="form-group option-section">
 	
-	<div class="form-inline">
-			<div class="form-group">
-				<%= f.label "Option"%>
-				<%= f.text_field :content, placeholder: "Option_name" ,class:"form-control"%>
-			</div>
-			<div class="form-group">
+	<div class="input-group">
+	 		<span class="input-group-addon" id="basic-addon1">Option</span>
+			<%= f.text_field :content, placeholder: "Option_name" ,class:"form-control"%>
+			<span class="input-group-btn">
 				<%= f.hidden_field :_destroy%>
-				<%= link_to "remove" , '#' , class: "remove_fields"%>
-			</div>
+       	<a href="#" role="button" class="remove_fields btn btn-default">
+							<span aria-hidden="true">&times;</span>
+				</a>
+      </span>
 	</div>
 </fieldset>
