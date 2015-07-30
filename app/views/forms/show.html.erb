@@ -3,9 +3,9 @@
 
 
 <h1>Reply List</h1>	
-<h2>Here is <%= link_to "Link" , new_reply_path(:form_id=>@form.id)%> for This Form</h2>
+<h2>Here is <%= link_to "Link" , new_form_reply_path(:form_id=>@form.id)%> for This Form</h2>
 <h4>or here is address => </h4>
-<h4><%=  new_reply_url(:form_id=>@form.id)%></h4>
+<h4><%=  new_form_reply_url(:form_id=>@form.id)%></h4>
 <% if @form.replies.first%>
 	<table class="table table-striped table-bordered table-condensed">
 	  <thead>

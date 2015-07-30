@@ -9,6 +9,7 @@ class RepliesController < ApplicationController
   # GET /replies/1
   # GET /replies/1.json
   def show
+    @form= Form.find(params[:form_id])
   end
 
   # GET /replies/new
@@ -24,11 +25,12 @@ class RepliesController < ApplicationController
   # POST /replies
   # POST /replies.json
   def create
+    @form= Form.find(params[:form_id])
     @reply = Reply.new(reply_params)
 
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
+        format.html { redirect_to form_reply_path(@form,@reply), notice: 'Reply was successfully created.' }
         format.json { render :show, status: :created, location: @reply }
       else
         format.html { render :new }

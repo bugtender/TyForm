@@ -4,6 +4,6 @@
 	<h1>Thank you!</h1>
 	<h3><%= @reply.form.name %></h3>
 	<h4>Learn More About <%= link_to "TyForm" , root_path %></h4>
-	<% link_to 'Edit', edit_reply_path(@reply) %> |
-	<% link_to 'Back', replies_path %>
+	<% link_to 'Edit', edit_form_reply_path(@form,@reply) %> |
+	<% link_to 'Back', form_replies_path %>
 </div>

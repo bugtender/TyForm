@@ -1,11 +1,11 @@
-<%= form_for(@reply) do |f| %>
+<%= form_for([@form,@reply]) do |f| %>
   <% if @reply.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+      <!-- <h3><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h3> -->
 
-      <ul>
+      <ul class="bg-danger">
       <% @reply.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li ><%= message %></li>
       <% end %>
       </ul>
     </div>
