@@ -7,6 +7,7 @@
     <thead>
       <tr>
         <th>Form Name</th>
+        <th>Edit</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -15,6 +16,7 @@
       <% @forms.each do |form| %>
         <tr>
           <td><%= link_to form.name, form %></td>
+          <td><%= link_to "Edit", edit_form_path(form) %></td>
           <td><%= link_to new_form_reply_url(form.id)%></td>
           <!-- <td><% link_to 'Edit', edit_form_path(form) %></td> -->
           <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>

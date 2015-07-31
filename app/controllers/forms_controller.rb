@@ -80,6 +80,7 @@ class FormsController < ApplicationController
             :name,
             :field_type,
             :default_type,
+            :position,
             :required,
             :_destroy,
             options_attributes:[:id,:content,:_destroy]

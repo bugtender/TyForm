@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
+gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'font-awesome-sass', '~> 4.3.0'
 gem 'bootstrap-sass', '~> 3.3.4'

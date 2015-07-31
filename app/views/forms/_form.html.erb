@@ -25,10 +25,12 @@
         <%= f.text_area :description ,class:"form-control"%>
       </div>
 
-      <%= f.fields_for :fields , @form.fields do |builder| %>
-        <%= render "forms/fields/field_#{builder.object.default_type}", f: builder %>
-      <% end %>
-    
+      <ul id="sortable" class="list-unstyled">
+        <%= f.fields_for :fields , f.object.fields.order(:position) do |builder| %>
+          <%= render "forms/fields/field_#{builder.object.default_type}", f: builder %>
+        <% end %>
+      </ul>
+
       <div id="form_dash">
         <%= f.label "New Field" %>
         <div>

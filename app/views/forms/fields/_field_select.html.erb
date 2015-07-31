@@ -1,25 +1,33 @@
-<fieldset class="form-group">
-	<%= f.label "Select"%>
-	<div class="input-group">
-			<span class="input-group-addon">
-        <%= f.check_box :required %> <%= f.label :required %>
-      </span>
-			<%= f.text_field :name, placeholder: "Name" ,class:"form-control"%>
-			<span class="input-group-btn">
-				<%= f.hidden_field :_destroy%>
-       	<a href="#" role="button" class="remove_fields btn btn-default">
-							<span aria-hidden="true">&times;</span>
-				</a>
-      </span>
-	</div>
-	<%= f.hidden_field :field_type ,:value =>"select" %>
-	<%= f.hidden_field :default_type ,:value =>"select" %>
+<li class="ui-state-default">
+  <fieldset class="form-group">
+  	<%= f.label "Select"%>
+  	<div class="input-group">
+        <span class="input-group-addon handle">
+          <span class="glyphicon glyphicon-resize-vertical " aria-hidden="true">
+          </span>
+        </span>
+  			<span class="input-group-addon">
+          <%= f.check_box :required %> <%= f.label :required %>
+        </span>
+  			<%= f.text_field :name, placeholder: "Name" ,class:"form-control"%>
+  			<span class="input-group-btn">
+  				<%= f.hidden_field :_destroy%>
+         	<a href="#" role="button" class="remove_form_fields btn btn-default">
+  							<span aria-hidden="true">&times;</span>
+  				</a>
+        </span>
+  	</div>
+  	<%= f.hidden_field :field_type ,:value =>"select" %>
+  	<%= f.hidden_field :default_type ,:value =>"select" %>
+    <%= f.hidden_field :position ,:class => "field_pos"%>
 
-	<%= f.fields_for :options do |builder| %>
-		<%= render 'forms/fields/option_field' , f:builder %>
-	<% end %>
-	<div id="option-dash">
-		<%= link_to_add_option_fields "New Option", f, :options%>
-	</div>
-</fieldset>
+
+  	<%= f.fields_for :options do |builder| %>
+  		<%= render 'forms/fields/option_field' , f:builder %>
+  	<% end %>
+  	<div id="option-dash">
+  		<%= link_to_add_option_fields "New Option", f, :options%>
+  	</div>
+  </fieldset>
+</li>
 
