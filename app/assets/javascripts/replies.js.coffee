@@ -3,15 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  $( "#sortable" ).sortable
-    axis:'y'
-    handle: '.handle'
 
   $(".submit-form").click ->
     $('.field_pos').each (index) ->
       $(this).val(index+1)
-
-  $(".form_dash").click ->
-    $( "#sortable" ).sortable
-      axis:'y'
-      handle: '.handle'

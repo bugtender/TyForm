@@ -18,6 +18,7 @@ $(document).on 'click', 'form .add_form_fields', (event) ->
   time = new Date().getTime()
   regexp = new RegExp($(this).data('id'), 'g')
   $("#sortable" ).append($(this).data('fields').replace(regexp, time))
+  $("#sortable" ).sortable({ handle: '.handle' ,axis:'y'});
   event.preventDefault()
 
 $(document).on 'click', 'form .add_option_fields', (event) ->
@@ -25,3 +26,9 @@ $(document).on 'click', 'form .add_option_fields', (event) ->
   regexp = new RegExp($(this).data('id'), 'g')
   $(this).before($(this).data('fields').replace(regexp, time))
   event.preventDefault()
+
+
+$(document).on 'ready page:load', ->
+  $( "#sortable" ).sortable
+    axis:'y'
+    handle: '.handle'
