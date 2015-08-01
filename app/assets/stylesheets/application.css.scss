@@ -16,7 +16,12 @@
  * file per style scope.
  *
  *= require_self
- *= require jquery-ui
+ *= require jquery-ui/core
+ *= require jquery-ui/theme
+ *= require jquery-ui/draggable
+ *= require jquery-ui/resizable
+ *= require jquery-ui/selectable
+ *= require jquery-ui/sortable
  */
 
  @import "origin";
